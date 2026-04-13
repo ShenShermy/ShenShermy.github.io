@@ -22,8 +22,8 @@
     phone:   "+86 137 1481 8884",
     github:  "https://github.com/ShenShermy",
     linkedin: "",
-    cvLink:    "https://github.com/ShenShermy",   // 英文简历，上传后改为 "./CV_ShenEnmin_EN.pdf"
-    cvLinkZh:  "https://github.com/ShenShermy",   // 中文简历，上传后改为 "./CV_ShenEnmin_CN.pdf"
+    cvLink:    "./SHEN_Enmin_CV_EN.pdf",   // 英文简历
+    cvLinkZh:  "./SHEN_Enmin_CV_CN.pdf",   // 中文简历
 
     // ── 英文内容 ──────────────────────────────────────────────
     en: {
@@ -86,7 +86,7 @@
           featured: true,
           type: "Individual Research · Featured",
           title: "HateFusion-Light — Multimodal Hate Speech Detection",
-          period: "2024 – 2025",
+          period: "2025 – 2026",
           problem: "Detecting hate speech in memes requires understanding both image and text together — neither modality alone is sufficient. Existing solutions are either too large for edge deployment or ignore multimodal context.",
           data: "Facebook Hateful Memes dataset: 10,000+ image–text pairs labelled for hate speech, covering sarcasm, derogatory stereotypes, and implicit bias.",
           approach: "Fused ModernBERT + HateBERT (text) and SigLIP-2 ViT-B/16 (image) via a four-stage pipeline: modality quality assessment → bidirectional cross-modal attention → gated dynamic fusion → supervised contrastive learning. Only 1.5M trainable parameters via LoRA.",
@@ -99,27 +99,27 @@
           featured: false,
           type: "Individual Project",
           title: "Fake News Detection — Multi-Model NLP Comparison",
-          period: "2024",
+          period: "2026",
           problem: "Misinformation spreads rapidly online. Which NLP architecture most reliably classifies news articles as real or fake?",
           data: "Public fake-news corpus with thousands of labelled news articles; preprocessed with tokenisation and contextual embeddings.",
           approach: "Implemented and compared BiLSTM, fine-tuned BERT, and a hybrid BERT-BiLSTM. Built an automated evaluation pipeline generating five comparative visualisations.",
           outcome: "Auto-highlighted best-performing model per metric across all architectures, enabling clear comparison and selection.",
           contribution: "",
           tech: ["Python","PyTorch","BERT","BiLSTM"],
-          link: "",
+          link: "https://github.com/ShenShermy/FakeNewsDetection.git",
         },
         {
           featured: false,
           type: "Individual Project",
           title: "Deep Q-Learning Snake Game AI",
-          period: "2024",
+          period: "2026",
           problem: "Train an RL agent to play Snake — demonstrating curriculum learning for stable convergence in a sparse-reward environment.",
           data: "Self-generated game environment via Pygame; state represented as grid observations.",
           approach: "DQN with experience replay and target network. Five-stage curriculum learning with layer normalisation.",
           outcome: "Achieved stable convergence; evaluation and live-demo scripts for reproducible benchmarking and real-time showcase.",
           contribution: "",
           tech: ["Python","DQN","Pygame","Curriculum Learning"],
-          link: "",
+          link: "https://github.com/ShenShermy/reinforce-game.git",
         },
         {
           featured: false,
@@ -138,8 +138,8 @@
 
       resumeLabel: "// 05 · Resume",
       resumeTitle: "Experience.",
-      cvBtnText: "↓  Download Full CV (PDF)",
-      cvHint: `* Upload PDF to repo, then change <code>cvLink</code> to <code>"./CV_ShenEnmin.pdf"</code>`,
+      cvBtnText: "↓  Download CV (EN)",
+      cvHint: `* The left button is English version, and the right button is Chinese version`,
       experiences: [
         {
           section: "Internship",
@@ -232,7 +232,7 @@
           featured: true,
           type: "个人研究项目 · 核心展示",
           title: "HateFusion-Light — 多模态仇恨言论检测框架",
-          period: "2024 – 2025",
+          period: "2025 – 2026",
           problem: "检测表情包中的仇恨言论需要同时理解图像与文字，单一模态无法胜任。现有方案要么参数量过大无法边缘部署，要么忽略了多模态上下文。",
           data: "Facebook Hateful Memes 数据集：超过10,000条带标注的图文对，涵盖讽刺、刻板偏见与隐性仇恨。",
           approach: "融合 ModernBERT + HateBERT（文本）与 SigLIP-2 ViT-B/16（图像），通过四阶段融合管道实现：模态质量评估 → 双向跨模态注意力 → 门控动态融合（含反模态坍塌正则化）→ 监督对比学习（τ=0.07）。通过 LoRA 微调仅使用150万可训练参数。采用自适应 Focal Loss 与多任务学习（情感+讽刺检测）。",
@@ -245,27 +245,27 @@
           featured: false,
           type: "个人项目",
           title: "假新闻检测 — 多模型NLP对比研究",
-          period: "2024年",
+          period: "2026年",
           problem: "虚假信息在网络上快速传播，需要找到最可靠的NLP架构来分类真假新闻。",
           data: "包含数千条带标注新闻文章的公开假新闻数据集，经过分词与上下文嵌入预处理。",
           approach: "实现并系统对比三种架构：BiLSTM、微调 BERT，以及将 BERT 嵌入输入 BiLSTM 的混合模型。构建自动化评估流水线，生成五张对比可视化图表。",
           outcome: "自动标注各架构在每项指标上的最优表现，便于清晰比较与模型选择。",
           contribution: "",
           tech: ["Python","PyTorch","BERT","BiLSTM"],
-          link: "",
+          link: "https://github.com/ShenShermy/FakeNewsDetection.git",
         },
         {
           featured: false,
           type: "个人项目",
-          title: "深度Q学习贪吃蛇AI",
-          period: "2024年",
+          title: "深度QLearning贪吃蛇AI",
+          period: "2026年",
           problem: "训练RL智能体玩贪吃蛇游戏，验证课程学习策略在稀疏奖励环境中的有效性。",
           data: "通过 Pygame 自动生成游戏环境，以网格观测量作为状态表示。",
           approach: "使用经验回放与目标网络训练 DQN 智能体，结合五阶段课程学习策略与层归一化实现稳定收敛。",
           outcome: "实现稳定收敛，提供评估与演示脚本，支持可复现的基准测试及实时AI游戏展示。",
           contribution: "",
           tech: ["Python","DQN","Pygame","课程学习"],
-          link: "",
+          link: "https://github.com/ShenShermy/reinforce-game.git",
         },
         {
           featured: false,
@@ -284,8 +284,8 @@
 
       resumeLabel: "// 05 · 简历",
       resumeTitle: "工作经历。",
-      cvBtnText: "↓  下载完整简历（PDF）",
-      cvHint: `* 将 PDF 上传至仓库后，把 <code>cvLink</code> 改为 <code>"./CV_ShenEnmin.pdf"</code>`,
+      cvBtnText: "↓  下载英文简历（PDF）",
+      cvHint: `* 左按钮是英文版，右按钮是中文版`,
       experiences: [
         {
           section: "实习经历",
@@ -317,7 +317,7 @@
       contactLabels: { email:"邮箱", phone:"电话", github:"GitHub", linkedin:"领英", location:"所在地" },
     },
 
-  }; // ← CONFIG 结束
+  }; // CONFIG 结束
   </script>
 
 
@@ -750,7 +750,7 @@ function render(lang) {
   $('cv-btn').href        = G.cvLink;
   $('cv-btn').textContent = L.cvBtnText;
   $('cv-btn-zh').href        = G.cvLinkZh;
-  $('cv-btn-zh').textContent = lang === 'en' ? '↓  Download CV (中文)' : '↓  下载中文简历（PDF）';
+  $('cv-btn-zh').textContent = lang === 'en' ? '↓  Download CV (CN)' : '↓  下载中文简历（PDF）';
   $('cv-hint').innerHTML  = L.cvHint;
 
   // ── ⑥ Contact ──────────────────────────────────────────────
