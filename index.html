@@ -5,958 +5,793 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shen Enmin — AI & Data Science Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+
+
+  <!-- ============================================================
+    █████  CONFIG ZONE — 双语内容配置区
+    ============================================================
+    📌 每个文字字段都有 en（英文）和 zh（中文）两个版本
+       修改对应语言的内容即可，结构完全一致
+  ============================================================ -->
+  <script>
+  const CONFIG = {
+
+    // ── 基本信息（语言无关） ──────────────────────────────────
+    email:   "shenenmin5s6d@163.com",
+    phone:   "+86 137 1481 8884",
+    github:  "https://github.com/ShenShermy",
+    linkedin: "",
+    cvLink:  "https://github.com/ShenShermy",   // 上传 PDF 后改为 "./CV_ShenEnmin.pdf"
+
+    // ── 英文内容 ──────────────────────────────────────────────
+    en: {
+      lang:       "en",
+      htmlLang:   "en",
+      name:       "Shen Enmin",
+      nameShort:  "SHEN ENMIN",
+      jobTarget:  "Data Science / AI Engineer",
+      location:   "Shenzhen, China · Hong Kong",
+
+      nav: ["Home","About","Skills","Projects","Resume","Contact"],
+
+      heroEyebrow: "// available for opportunities",
+      heroHeadline: `Seeking a <strong>Data Science / AI Engineer</strong> role — building intelligent systems at the intersection of deep learning, NLP, and scalable software.`,
+
+      heroTags: [
+        { text: "AI / Deep Learning",  color: "blue"   },
+        { text: "NLP · Multimodal",    color: "purple" },
+        { text: "Python · PyTorch",    color: "blue"   },
+        { text: "Vue.js · Frontend",   color: "purple" },
+        { text: "Open to Work",        color: "red"    },
+      ],
+
+      aboutLabel: "// 02 · About",
+      aboutTitle: "About<br/>Me.",
+      aboutBio: [
+        `I'm a <strong>software engineer turned AI researcher</strong> currently pursuing an MSc in Data Science at Lingnan University, Hong Kong. My background spans full-stack frontend development and cutting-edge deep learning research — I thrive where engineering rigour meets research creativity.`,
+        `During my internship at the <strong>Shenzhen Research Institute of Big Data</strong>, I designed a production-ready CNN+Transformer auscultation annotation system from scratch. I'm passionate about building AI systems that are not only accurate but <strong>lightweight and deployable</strong> on real hardware.`,
+      ],
+      strengths: [
+        "End-to-end ML: from data preprocessing to FastAPI / Gradio deployment",
+        "Multimodal learning: text + vision fusion (LoRA, BERT, ViT)",
+        "Frontend engineering with Vue.js for AI-facing interfaces",
+        "Research mindset with production-grade engineering habits",
+      ],
+      eduLabel: "// Education",
+      langLabel: "// Language",
+      education: [
+        { school: "Lingnan University, Hong Kong",       degree: "MSc Data Science",          period: "Sep 2025 – Aug 2026 (Expected)" },
+        { school: "Beijing Normal University, Zhuhai",   degree: "BEng Software Engineering", period: "Sep 2018 – Jul 2022" },
+      ],
+      languages: ["Mandarin — Native", "English — IELTS 6.5 · CET-6"],
+
+      skillsLabel: "// 03 · Skills",
+      skillsTitle: "Technical<br/>Arsenal.",
+      skillCategories: [
+        { label: "AI / Machine Learning",    items: ["PyTorch","HuggingFace Transformers","LoRA / PEFT","BERT · ModernBERT · SigLIP","CNN · LSTM · DQN","Contrastive Learning"] },
+        { label: "Programming & Tools",      items: ["Python","JavaScript / C++ / C#","Git / GitLab / GitHub","FastAPI · Gradio","TensorBoard","Tableau"] },
+        { label: "Frontend Development",     items: ["Vue.js / uni-app","Axios · ElementUI","CSS Flexbox / Grid","Webpack","Unity3D (C#)","Cross-platform compatibility"] },
+        { label: "Business / Research",      items: ["Problem framing & scoping","Metrics design & evaluation","Research reporting","Agile / Scrum collaboration","API integration & system design"] },
+        { label: "NLP / Signal Processing",  items: ["Text classification / NER","Multimodal fusion","STFT / MFCC","Audio transcoding / denoising","Sentiment / sarcasm detection"] },
+        { label: "Deployment / MLOps",       items: ["FastAPI REST service","Gradio demo interface","Low-resource GPU optimisation","Model eval pipelines","Reproducible benchmarking"] },
+      ],
+
+      projectsLabel: "// 04 · Projects",
+      projectsTitle: "Portfolio.",
+      projectFieldLabels: { problem:"Problem", data:"Data", approach:"Approach", outcome:"Outcome / Impact", contribution:"My Contribution" },
+      projects: [
+        {
+          featured: true,
+          type: "Individual Research · Featured",
+          title: "HateFusion-Light — Multimodal Hate Speech Detection",
+          period: "2024 – 2025",
+          problem: "Detecting hate speech in memes requires understanding both image and text together — neither modality alone is sufficient. Existing solutions are either too large for edge deployment or ignore multimodal context.",
+          data: "Facebook Hateful Memes dataset: 10,000+ image–text pairs labelled for hate speech, covering sarcasm, derogatory stereotypes, and implicit bias.",
+          approach: "Fused ModernBERT + HateBERT (text) and SigLIP-2 ViT-B/16 (image) via a four-stage pipeline: modality quality assessment → bidirectional cross-modal attention → gated dynamic fusion → supervised contrastive learning. Only 1.5M trainable parameters via LoRA.",
+          outcome: "Expected AUROC 87–89% and F1 83–85% on a consumer-grade GPU (6–8 GB VRAM). Packaged with Gradio demo and production-ready FastAPI service.",
+          contribution: "",
+          tech: ["Python","PyTorch","HuggingFace","LoRA","ModernBERT","SigLIP-2","FastAPI","Gradio"],
+          link: "https://github.com/ShenShermy",
+        },
+        {
+          featured: false,
+          type: "Individual Project",
+          title: "Fake News Detection — Multi-Model NLP Comparison",
+          period: "2024",
+          problem: "Misinformation spreads rapidly online. Which NLP architecture most reliably classifies news articles as real or fake?",
+          data: "Public fake-news corpus with thousands of labelled news articles; preprocessed with tokenisation and contextual embeddings.",
+          approach: "Implemented and compared BiLSTM, fine-tuned BERT, and a hybrid BERT-BiLSTM. Built an automated evaluation pipeline generating five comparative visualisations.",
+          outcome: "Auto-highlighted best-performing model per metric across all architectures, enabling clear comparison and selection.",
+          contribution: "",
+          tech: ["Python","PyTorch","BERT","BiLSTM"],
+          link: "",
+        },
+        {
+          featured: false,
+          type: "Individual Project",
+          title: "Deep Q-Learning Snake Game AI",
+          period: "2024",
+          problem: "Train an RL agent to play Snake — demonstrating curriculum learning for stable convergence in a sparse-reward environment.",
+          data: "Self-generated game environment via Pygame; state represented as grid observations.",
+          approach: "DQN with experience replay and target network. Five-stage curriculum learning with layer normalisation.",
+          outcome: "Achieved stable convergence; evaluation and live-demo scripts for reproducible benchmarking and real-time showcase.",
+          contribution: "",
+          tech: ["Python","DQN","Pygame","Curriculum Learning"],
+          link: "",
+        },
+        {
+          featured: false,
+          type: "Team Project (Frontend Lead)",
+          title: "Rainbow Assessment — Teacher Platform",
+          period: "Mar 2021 – Jun 2022",
+          problem: "Teachers needed a unified web platform to manage grades, clubs, classes and subjects — replacing fragmented spreadsheet workflows.",
+          data: "Internal school management data; real-time API from backend team.",
+          approach: "Led front-end development of six core pages using Vue-CLI with real-time Axios API integration.",
+          outcome: "Delivered a fully functional cross-browser platform adopted by the school for daily grade management.",
+          contribution: "Led development of six core pages (Home, Grade Entry, Club / Class / Subject Management); integrated Axios; ensured cross-browser compatibility.",
+          tech: ["Vue.js","Axios","CSS Flexbox","GitLab"],
+          link: "",
+        },
+      ],
+
+      resumeLabel: "// 05 · Resume",
+      resumeTitle: "Experience.",
+      cvBtnText: "↓  Download Full CV (PDF)",
+      cvHint: `* Upload PDF to repo, then change <code>cvLink</code> to <code>"./CV_ShenEnmin.pdf"</code>`,
+      experiences: [
+        {
+          section: "Internship",
+          role: "AI Reinforcement Learning Research Assistant",
+          org: "Shenzhen Research Institute of Big Data",
+          period: "Jul – Aug 2024",
+          bullets: [
+            "Completed Stanford CS230 (Deep Learning) and CS224N (NLP), studying neural networks, GANs, transformers, GloVe, RNN and LSTM.",
+            "Designed and built an AI auscultation annotation system using a CNN+Transformer pipeline with audio transcoding and noise reduction tools.",
+            "Optimised architecture with dropout regularisation, Adam optimiser and AverageMeter; used TensorBoard for visualisation, improving model accuracy and annotation efficiency.",
+          ],
+        },
+        {
+          section: "Work Experience",
+          role: "Front-End Developer — Technical Development Dept.",
+          org: "Galaxy Communications Ltd., Shenzhen",
+          period: "Aug 2022 – Sep 2023",
+          bullets: [
+            "Designed and developed front-end interfaces with uni-app, Vue.js and CSS Flexbox for cross-platform (mobile + desktop) deployment.",
+            "Built waterfall-layout and hot-search tag components with real-time backend API integration via Axios.",
+            "Maintained version control and code reviews via GitLab within an agile team.",
+          ],
+        },
+      ],
+
+      contactLabel: "// 06 · Contact",
+      contactTitle: "Get In<br/>Touch.",
+      contactNote: `I'm actively seeking <strong>Data Science / AI Engineer</strong> roles. Feel free to reach out — response within 24 hours.`,
+      contactLabels: { email:"Email", phone:"Phone", github:"GitHub", linkedin:"LinkedIn", location:"Location" },
+    },
+
+    // ── 中文内容 ──────────────────────────────────────────────
+    zh: {
+      lang:       "zh",
+      htmlLang:   "zh-CN",
+      name:       "沈恩民",
+      nameShort:  "沈恩民",
+      jobTarget:  "数据科学 / AI工程师",
+      location:   "深圳，广东 · 香港",
+
+      nav: ["首页","关于我","技能","项目","简历","联系"],
+
+      heroEyebrow: "// 正在寻找新机会",
+      heroHeadline: `正在寻找<strong>数据科学 / AI工程师</strong>方向的工作机会 —— 专注于深度学习、自然语言处理与可落地的智能系统开发。`,
+
+      heroTags: [
+        { text: "人工智能 / 深度学习", color: "blue"   },
+        { text: "NLP · 多模态",       color: "purple" },
+        { text: "Python · PyTorch",  color: "blue"   },
+        { text: "Vue.js · 前端",     color: "purple" },
+        { text: "求职中",             color: "red"    },
+      ],
+
+      aboutLabel: "// 02 · 关于我",
+      aboutTitle: "关于<br/>我。",
+      aboutBio: [
+        `我是一名<strong>从软件工程转型为AI研究方向</strong>的工程师，目前在香港岭南大学攻读数据科学硕士学位。我的背景横跨全栈前端开发与前沿深度学习研究，擅长在工程严谨性与研究创造力之间找到平衡。`,
+        `在<strong>深圳大数据研究院</strong>的实习期间，我从零设计并实现了一套生产级 CNN+Transformer 听诊标注系统。我热衷于构建不仅精准，而且<strong>轻量、可部署</strong>的AI系统。`,
+      ],
+      strengths: [
+        "端到端机器学习能力：从数据预处理到 FastAPI / Gradio 生产部署",
+        "多模态学习：文本+视觉融合（LoRA、BERT、ViT）",
+        "基于 Vue.js 的 AI 前端界面工程开发",
+        "具备研究思维与工程落地习惯",
+      ],
+      eduLabel: "// 教育背景",
+      langLabel: "// 语言能力",
+      education: [
+        { school: "岭南大学（香港）",       degree: "理学硕士 · 数据科学",   period: "2025年9月 – 2026年8月（预计）" },
+        { school: "北京师范大学（珠海）",   degree: "工学学士 · 软件工程",   period: "2018年9月 – 2022年7月" },
+      ],
+      languages: ["普通话 — 母语", "英语 — 雅思 6.5 · CET-6"],
+
+      skillsLabel: "// 03 · 技能",
+      skillsTitle: "技术<br/>能力。",
+      skillCategories: [
+        { label: "AI / 机器学习",       items: ["PyTorch","HuggingFace Transformers","LoRA / PEFT","BERT · ModernBERT · SigLIP","CNN · LSTM · DQN","对比学习"] },
+        { label: "编程语言与工具",       items: ["Python","JavaScript / C++ / C#","Git / GitLab / GitHub","FastAPI · Gradio","TensorBoard","Tableau"] },
+        { label: "前端开发",             items: ["Vue.js / uni-app","Axios · ElementUI","CSS Flexbox / Grid","Webpack","Unity3D (C#)","跨平台兼容性"] },
+        { label: "业务与研究能力",       items: ["问题拆解与范围界定","指标设计与模型评估","研究报告与成果呈现","敏捷/Scrum协作","API集成与系统设计"] },
+        { label: "NLP / 信号处理",       items: ["文本分类 / 命名实体识别","多模态融合","STFT / MFCC 特征提取","音频转码与降噪","情感与讽刺检测"] },
+        { label: "部署 / MLOps",         items: ["FastAPI REST 服务","Gradio 演示界面","低显存GPU优化","模型评估流水线","可复现基准测试"] },
+      ],
+
+      projectsLabel: "// 04 · 项目",
+      projectsTitle: "项目<br/>展示。",
+      projectFieldLabels: { problem:"问题背景", data:"数据说明", approach:"方法与模型", outcome:"结果与价值", contribution:"个人贡献" },
+      projects: [
+        {
+          featured: true,
+          type: "个人研究项目 · 核心展示",
+          title: "HateFusion-Light — 多模态仇恨言论检测框架",
+          period: "2024 – 2025",
+          problem: "检测表情包中的仇恨言论需要同时理解图像与文字，单一模态无法胜任。现有方案要么参数量过大无法边缘部署，要么忽略了多模态上下文。",
+          data: "Facebook Hateful Memes 数据集：超过10,000条带标注的图文对，涵盖讽刺、刻板偏见与隐性仇恨。",
+          approach: "融合 ModernBERT + HateBERT（文本）与 SigLIP-2 ViT-B/16（图像），通过四阶段融合管道实现：模态质量评估 → 双向跨模态注意力 → 门控动态融合（含反模态坍塌正则化）→ 监督对比学习（τ=0.07）。通过 LoRA 微调仅使用150万可训练参数。采用自适应 Focal Loss 与多任务学习（情感+讽刺检测）。",
+          outcome: "在消费级 GPU（6–8 GB 显存）上达到预期 AUROC 87–89%、F1 83–85%。打包了完整端到端部署方案，含 Gradio 演示界面与生产级 FastAPI 服务。",
+          contribution: "",
+          tech: ["Python","PyTorch","HuggingFace","LoRA","ModernBERT","SigLIP-2","FastAPI","Gradio"],
+          link: "https://github.com/ShenShermy",
+        },
+        {
+          featured: false,
+          type: "个人项目",
+          title: "假新闻检测 — 多模型NLP对比研究",
+          period: "2024年",
+          problem: "虚假信息在网络上快速传播，需要找到最可靠的NLP架构来分类真假新闻。",
+          data: "包含数千条带标注新闻文章的公开假新闻数据集，经过分词与上下文嵌入预处理。",
+          approach: "实现并系统对比三种架构：BiLSTM、微调 BERT，以及将 BERT 嵌入输入 BiLSTM 的混合模型。构建自动化评估流水线，生成五张对比可视化图表。",
+          outcome: "自动标注各架构在每项指标上的最优表现，便于清晰比较与模型选择。",
+          contribution: "",
+          tech: ["Python","PyTorch","BERT","BiLSTM"],
+          link: "",
+        },
+        {
+          featured: false,
+          type: "个人项目",
+          title: "深度Q学习贪吃蛇AI",
+          period: "2024年",
+          problem: "训练RL智能体玩贪吃蛇游戏，验证课程学习策略在稀疏奖励环境中的有效性。",
+          data: "通过 Pygame 自动生成游戏环境，以网格观测量作为状态表示。",
+          approach: "使用经验回放与目标网络训练 DQN 智能体，结合五阶段课程学习策略与层归一化实现稳定收敛。",
+          outcome: "实现稳定收敛，提供评估与演示脚本，支持可复现的基准测试及实时AI游戏展示。",
+          contribution: "",
+          tech: ["Python","DQN","Pygame","课程学习"],
+          link: "",
+        },
+        {
+          featured: false,
+          type: "团队项目（前端负责人）",
+          title: "彩虹测评 — 教师管理平台",
+          period: "2021年3月 – 2022年6月",
+          problem: "教师需要一个统一的Web平台来管理成绩、社团、班级与科目，替代繁琐的电子表格工作流。",
+          data: "校内管理数据，通过后端团队提供的实时API获取。",
+          approach: "使用 Vue-CLI 主导六大核心页面的前端开发，通过 Axios 集成实时 API，并在 GitLab 敏捷团队中协作推进。",
+          outcome: "交付了全功能跨浏览器平台，已被学校用于日常成绩管理。",
+          contribution: "主导六大核心页面开发（首页、成绩录入、社团/班级/科目管理）；集成 Axios 实现实时API渲染；完成多浏览器兼容性测试。",
+          tech: ["Vue.js","Axios","CSS Flexbox","GitLab"],
+          link: "",
+        },
+      ],
+
+      resumeLabel: "// 05 · 简历",
+      resumeTitle: "工作经历。",
+      cvBtnText: "↓  下载完整简历（PDF）",
+      cvHint: `* 将 PDF 上传至仓库后，把 <code>cvLink</code> 改为 <code>"./CV_ShenEnmin.pdf"</code>`,
+      experiences: [
+        {
+          section: "实习经历",
+          role: "人工智能强化学习技术 — 研究助理",
+          org: "深圳大数据研究院",
+          period: "2024年7月 – 8月",
+          bullets: [
+            "系统学习斯坦福 CS230（深度学习）与 CS224N（自然语言处理），涵盖神经网络、GAN、Transformer、GloVe、RNN 及 LSTM。",
+            "设计并实现基于 CNN+Transformer 的 AI 听诊标注系统，开发音频转码与降噪工具，统一音频格式与采样率。",
+            "引入 Dropout 正则化、Adam 优化器与 AverageMeter 监控优化训练过程；使用 TensorBoard 进行可视化分析，显著提升标注效率与模型精度。",
+          ],
+        },
+        {
+          section: "工作经历",
+          role: "前端开发工程师 — 技术研发部",
+          org: "银河通信有限公司（深圳）",
+          period: "2022年8月 – 2023年9月",
+          bullets: [
+            "使用 uni-app、Vue.js 及 CSS Flexbox 开发跨平台前端界面，确保多端兼容性与响应式布局。",
+            "开发瀑布流布局组件和热搜标签功能，通过 Axios 实现与后端 API 的高效实时交互，提升用户体验。",
+            "与产品经理紧密协作推进功能迭代；通过 GitLab 管理版本，在敏捷团队中高效完成交付。",
+          ],
+        },
+      ],
+
+      contactLabel: "// 06 · 联系方式",
+      contactTitle: "联系<br/>我。",
+      contactNote: `目前正在积极寻找<strong>数据科学 / AI工程师</strong>职位，欢迎联系 —— 通常在24小时内回复。`,
+      contactLabels: { email:"邮箱", phone:"电话", github:"GitHub", linkedin:"领英", location:"所在地" },
+    },
+
+  }; // ← CONFIG 结束
+  </script>
+
+
+  <!-- ============================================================
+    🎨 STYLES
+    ============================================================
+    🔑 换色：只改 :root 里的 --accent / --accent2 / --bg
+    🔑 中文字体：已引入 Noto Sans SC，自动对中文段落生效
+  ============================================================ -->
   <style>
     :root {
-      --bg: #080c14;
-      --bg2: #0d1421;
-      --bg3: #111927;
-      --accent: #00e5ff;
+      --bg:      #080c14;
+      --accent:  #00e5ff;
       --accent2: #7b61ff;
       --accent3: #ff6b6b;
-      --text: #e8edf5;
-      --text-dim: #7a8899;
-      --border: rgba(0, 229, 255, 0.15);
-      --card-bg: rgba(13, 20, 33, 0.8);
-      --mono: 'Space Mono', monospace;
-      --sans: 'Syne', sans-serif;
+      --text:    #e8edf5;
+      --dim:     #7a8899;
+      --border:  rgba(0,229,255,0.15);
+      --card:    rgba(13,20,33,0.8);
+      --mono:    'Space Mono', monospace;
+      --sans:    'Syne', 'Noto Sans SC', sans-serif;   /* 英文用 Syne，中文回退 Noto Sans SC */
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { background:var(--bg); color:var(--text); font-family:var(--sans); overflow-x:hidden; }
 
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--sans);
-      overflow-x: hidden;
-    }
-
-    /* ── NOISE OVERLAY ── */
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 9999; opacity: 0.4;
-    }
+    /* 噪点纹理 */
+    body::before { content:''; position:fixed; inset:0; pointer-events:none; z-index:9999; opacity:0.4;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); }
 
     /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.2rem 4rem;
-      background: rgba(8, 12, 20, 0.85);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
+    nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:1.2rem 4rem; background:rgba(8,12,20,0.85); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); gap:1rem; }
+    .nav-logo { font-family:var(--mono); font-size:0.9rem; color:var(--accent); letter-spacing:0.08em; white-space:nowrap; }
+    .nav-links { display:flex; gap:2rem; list-style:none; flex-wrap:wrap; }
+    .nav-links a { font-family:var(--mono); font-size:0.75rem; color:var(--dim); text-decoration:none; letter-spacing:0.06em; text-transform:uppercase; transition:color 0.2s; }
+    .nav-links a:hover { color:var(--accent); }
 
-    .nav-logo {
+    /* 语言切换按钮 */
+    .lang-btn {
       font-family: var(--mono);
-      font-size: 0.9rem;
-      color: var(--accent);
+      font-size: 0.75rem;
       letter-spacing: 0.08em;
-    }
-
-    .nav-links {
-      display: flex; gap: 2.5rem; list-style: none;
-    }
-
-    .nav-links a {
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      color: var(--text-dim);
-      text-decoration: none;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--accent); }
-
-    /* ── SECTIONS ── */
-    section {
-      min-height: 100vh;
-      padding: 7rem 4rem 5rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-family: var(--mono);
-      font-size: 0.72rem;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid var(--accent);
+      border-radius: 2px;
       color: var(--accent);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 0.6rem;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
+    .lang-btn:hover { background:var(--accent); color:var(--bg); }
 
-    h2.section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 3rem;
-    }
+    /* ── SECTION ── */
+    section { min-height:100vh; padding:7rem 4rem 5rem; max-width:1200px; margin:0 auto; }
+    .section-label { font-family:var(--mono); font-size:0.72rem; color:var(--accent); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.6rem; }
+    h2.section-title { font-size:clamp(2rem,4vw,3rem); font-weight:800; line-height:1.1; margin-bottom:3rem; }
 
     /* ── HERO ── */
-    #home {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 100vh;
-      padding-top: 8rem;
-      position: relative;
-    }
-
-    /* grid background */
-    #home::after {
-      content: '';
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
-    }
-
-    .hero-eyebrow {
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      color: var(--accent);
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      margin-bottom: 1.4rem;
-      animation: fadeUp 0.8s ease both;
-    }
-
-    .hero-name {
-      font-size: clamp(3.5rem, 8vw, 7rem);
-      font-weight: 800;
-      line-height: 0.95;
-      letter-spacing: -0.02em;
-      animation: fadeUp 0.8s 0.1s ease both;
-    }
-
-    .hero-name span {
-      display: block;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-headline {
-      font-size: clamp(1rem, 2vw, 1.3rem);
-      color: var(--text-dim);
-      max-width: 560px;
-      margin: 1.6rem 0 2.4rem;
-      line-height: 1.6;
-      animation: fadeUp 0.8s 0.2s ease both;
-    }
-
-    .hero-tags {
-      display: flex; flex-wrap: wrap; gap: 0.6rem;
-      animation: fadeUp 0.8s 0.3s ease both;
-    }
-
-    .tag {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      padding: 0.3rem 0.85rem;
-      border-radius: 2px;
-      border: 1px solid;
-    }
-
-    .tag-blue { border-color: var(--accent); color: var(--accent); background: rgba(0,229,255,0.06); }
-    .tag-purple { border-color: var(--accent2); color: var(--accent2); background: rgba(123,97,255,0.06); }
-    .tag-red { border-color: var(--accent3); color: var(--accent3); background: rgba(255,107,107,0.06); }
+    #home { display:flex; flex-direction:column; justify-content:center; position:relative; }
+    #home::after { content:''; position:absolute; inset:0; pointer-events:none;
+      background-image:linear-gradient(rgba(0,229,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.03) 1px,transparent 1px);
+      background-size:60px 60px; }
+    .hero-eyebrow { font-family:var(--mono); font-size:0.8rem; color:var(--accent); letter-spacing:0.25em; text-transform:uppercase; margin-bottom:1.4rem; animation:fadeUp 0.8s ease both; }
+    .hero-name { font-size:clamp(3.5rem,8vw,7rem); font-weight:800; line-height:0.95; letter-spacing:-0.02em; animation:fadeUp 0.8s 0.1s ease both; }
+    .hero-name span { display:block; background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .hero-headline { font-size:clamp(1rem,2vw,1.25rem); color:var(--dim); max-width:560px; margin:1.6rem 0 2.4rem; line-height:1.7; animation:fadeUp 0.8s 0.2s ease both; }
+    .hero-headline strong { color:var(--text); }
+    .hero-tags { display:flex; flex-wrap:wrap; gap:0.6rem; animation:fadeUp 0.8s 0.3s ease both; }
+    .tag { font-family:var(--mono); font-size:0.72rem; letter-spacing:0.06em; padding:0.3rem 0.85rem; border-radius:2px; border:1px solid; }
+    .tag-blue   { border-color:var(--accent);  color:var(--accent);  background:rgba(0,229,255,0.06); }
+    .tag-purple { border-color:var(--accent2); color:var(--accent2); background:rgba(123,97,255,0.06); }
+    .tag-red    { border-color:var(--accent3); color:var(--accent3); background:rgba(255,107,107,0.06); }
 
     /* ── ABOUT ── */
-    #about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
-
-    #about .left {}
-
-    .about-bio {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: var(--text-dim);
-      margin-bottom: 2rem;
-    }
-
-    .about-bio strong { color: var(--text); }
-
-    .edu-card {
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      background: var(--card-bg);
-      padding: 1.2rem 1.4rem;
-      margin-bottom: 1rem;
-      border-radius: 0 4px 4px 0;
-    }
-
-    .edu-school {
-      font-weight: 700;
-      font-size: 0.95rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .edu-degree {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--text-dim);
-      margin-bottom: 0.15rem;
-    }
-
-    .edu-period {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--accent);
-    }
-
-    .strengths-list {
-      list-style: none;
-    }
-
-    .strengths-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      padding: 0.7rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    .strengths-list li::before {
-      content: '→';
-      color: var(--accent);
-      font-family: var(--mono);
-      font-size: 0.85rem;
-      flex-shrink: 0;
-      margin-top: 0.05rem;
-    }
+    #about { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
+    .about-bio { font-size:1rem; line-height:1.8; color:var(--dim); margin-bottom:1.1rem; }
+    .about-bio strong { color:var(--text); }
+    .edu-card { border:1px solid var(--border); border-left:3px solid var(--accent); background:var(--card); padding:1.2rem 1.4rem; margin-bottom:1rem; border-radius:0 4px 4px 0; }
+    .edu-school { font-weight:700; font-size:0.95rem; margin-bottom:0.2rem; }
+    .edu-degree { font-family:var(--mono); font-size:0.75rem; color:var(--dim); margin-bottom:0.15rem; }
+    .edu-period { font-family:var(--mono); font-size:0.72rem; color:var(--accent); }
+    .strengths-list { list-style:none; margin-top:1.5rem; }
+    .strengths-list li { display:flex; align-items:flex-start; gap:0.75rem; padding:0.7rem 0; border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.93rem; line-height:1.55; }
+    .strengths-list li::before { content:'→'; color:var(--accent); font-family:var(--mono); font-size:0.85rem; flex-shrink:0; margin-top:0.05rem; }
 
     /* ── SKILLS ── */
-    #skills { background: none; }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .skill-category {
-      border: 1px solid var(--border);
-      background: var(--card-bg);
-      padding: 1.8rem;
-      border-radius: 4px;
-      transition: border-color 0.25s, transform 0.25s;
-    }
-
-    .skill-category:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px);
-    }
-
-    .skill-category-label {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.2rem;
-      padding-bottom: 0.7rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .skill-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.45rem 0;
-      font-size: 0.88rem;
-      color: var(--text-dim);
-      border-bottom: 1px solid rgba(255,255,255,0.03);
-    }
-
-    .skill-item:last-child { border-bottom: none; }
-
-    .skill-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--accent2);
-      flex-shrink: 0;
-    }
+    .skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .skill-category { border:1px solid var(--border); background:var(--card); padding:1.8rem; border-radius:4px; transition:border-color 0.25s,transform 0.25s; }
+    .skill-category:hover { border-color:var(--accent); transform:translateY(-3px); }
+    .skill-cat-label { font-family:var(--mono); font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; padding-bottom:0.7rem; border-bottom:1px solid var(--border); }
+    .skill-item { display:flex; justify-content:space-between; align-items:center; padding:0.45rem 0; font-size:0.88rem; color:var(--dim); border-bottom:1px solid rgba(255,255,255,0.03); }
+    .skill-item:last-child { border-bottom:none; }
+    .skill-dot { width:6px; height:6px; border-radius:50%; background:var(--accent2); flex-shrink:0; }
 
     /* ── PROJECTS ── */
-    #projects {}
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .project-card {
-      border: 1px solid var(--border);
-      background: var(--card-bg);
-      padding: 2rem;
-      border-radius: 4px;
-      transition: border-color 0.25s, transform 0.25s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .project-card:hover { border-color: rgba(0,229,255,0.35); transform: translateY(-4px); }
-    .project-card:hover::before { opacity: 1; }
-
-    .project-card.featured {
-      grid-column: 1 / -1;
-    }
-
-    .project-type {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.16em;
-      color: var(--accent2);
-      text-transform: uppercase;
-      margin-bottom: 0.6rem;
-    }
-
-    .project-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-    }
-
-    .project-period {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--text-dim);
-      margin-bottom: 1.2rem;
-    }
-
-    .project-section {
-      margin-bottom: 0.9rem;
-    }
-
-    .project-section-title {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.3rem;
-    }
-
-    .project-section p {
-      font-size: 0.87rem;
-      color: var(--text-dim);
-      line-height: 1.65;
-    }
-
-    .project-tech-row {
-      display: flex; flex-wrap: wrap; gap: 0.4rem;
-      margin-top: 1.2rem;
-    }
-
-    .tech-pill {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      padding: 0.2rem 0.6rem;
-      background: rgba(123,97,255,0.1);
-      border: 1px solid rgba(123,97,255,0.25);
-      border-radius: 2px;
-      color: var(--accent2);
-      letter-spacing: 0.04em;
-    }
+    .projects-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+    .project-card { border:1px solid var(--border); background:var(--card); padding:2rem; border-radius:4px; transition:border-color 0.25s,transform 0.25s; position:relative; overflow:hidden; }
+    .project-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--accent),var(--accent2)); opacity:0; transition:opacity 0.3s; }
+    .project-card:hover { border-color:rgba(0,229,255,0.35); transform:translateY(-4px); }
+    .project-card:hover::before { opacity:1; }
+    .project-card.featured { grid-column:1 / -1; }
+    .project-type { font-family:var(--mono); font-size:0.68rem; letter-spacing:0.14em; color:var(--accent2); text-transform:uppercase; margin-bottom:0.6rem; }
+    .project-title { font-size:1.2rem; font-weight:700; margin-bottom:0.3rem; }
+    .project-period { font-family:var(--mono); font-size:0.72rem; color:var(--dim); margin-bottom:1.2rem; }
+    .project-section { margin-bottom:0.9rem; }
+    .proj-sec-title { font-family:var(--mono); font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:0.3rem; }
+    .project-section p { font-size:0.87rem; color:var(--dim); line-height:1.65; }
+    .feat-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+    .project-tech-row { display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:1.2rem; align-items:center; }
+    .tech-pill { font-family:var(--mono); font-size:0.68rem; padding:0.2rem 0.6rem; background:rgba(123,97,255,0.1); border:1px solid rgba(123,97,255,0.25); border-radius:2px; color:var(--accent2); }
+    .proj-link { color:var(--accent); font-family:var(--mono); font-size:0.72rem; margin-left:auto; text-decoration:none; }
 
     /* ── RESUME ── */
-    #resume {}
-
-    .resume-block {
-      border: 1px solid var(--border);
-      background: var(--card-bg);
-      border-radius: 4px;
-      overflow: hidden;
-      margin-bottom: 2rem;
-    }
-
-    .resume-block-header {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      padding: 0.9rem 1.6rem;
-      background: rgba(0,229,255,0.05);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .resume-entry {
-      padding: 1.2rem 1.6rem;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 1rem;
-      align-items: start;
-    }
-
-    .resume-entry:last-child { border-bottom: none; }
-
-    .resume-role {
-      font-weight: 700;
-      font-size: 0.95rem;
-      margin-bottom: 0.15rem;
-    }
-
-    .resume-org {
-      font-size: 0.82rem;
-      color: var(--text-dim);
-      margin-bottom: 0.5rem;
-    }
-
-    .resume-bullets {
-      list-style: none;
-    }
-
-    .resume-bullets li {
-      font-size: 0.83rem;
-      color: var(--text-dim);
-      line-height: 1.6;
-      padding-left: 1rem;
-      position: relative;
-      margin-bottom: 0.25rem;
-    }
-
-    .resume-bullets li::before {
-      content: '▸';
-      position: absolute; left: 0;
-      color: var(--accent);
-      font-size: 0.7rem;
-    }
-
-    .resume-period {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--accent);
-      white-space: nowrap;
-    }
-
-    .cv-download-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.9rem 2rem;
-      background: transparent;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      cursor: pointer;
-      border-radius: 2px;
-      transition: background 0.2s, color 0.2s;
-      margin-top: 1rem;
-    }
-
-    .cv-download-btn:hover {
-      background: var(--accent);
-      color: var(--bg);
-    }
+    .resume-block { border:1px solid var(--border); background:var(--card); border-radius:4px; overflow:hidden; margin-bottom:2rem; }
+    .resume-block-hdr { font-family:var(--mono); font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent); padding:0.9rem 1.6rem; background:rgba(0,229,255,0.05); border-bottom:1px solid var(--border); }
+    .resume-entry { padding:1.2rem 1.6rem; border-bottom:1px solid rgba(255,255,255,0.04); display:grid; grid-template-columns:1fr auto; gap:1rem; }
+    .resume-entry:last-child { border-bottom:none; }
+    .resume-role { font-weight:700; font-size:0.95rem; margin-bottom:0.15rem; }
+    .resume-org  { font-size:0.82rem; color:var(--dim); margin-bottom:0.5rem; }
+    .resume-buls { list-style:none; }
+    .resume-buls li { font-size:0.83rem; color:var(--dim); line-height:1.6; padding-left:1rem; position:relative; margin-bottom:0.25rem; }
+    .resume-buls li::before { content:'▸'; position:absolute; left:0; color:var(--accent); font-size:0.7rem; }
+    .resume-period { font-family:var(--mono); font-size:0.7rem; color:var(--accent); white-space:nowrap; }
+    .cv-btn { display:inline-flex; align-items:center; gap:0.6rem; padding:0.9rem 2rem; background:transparent; border:1px solid var(--accent); color:var(--accent); font-family:var(--mono); font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; border-radius:2px; transition:background 0.2s,color 0.2s; margin-top:1rem; }
+    .cv-btn:hover { background:var(--accent); color:var(--bg); }
 
     /* ── CONTACT ── */
-    #contact {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      margin-top: 1rem;
-    }
-
-    .contact-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      border: 1px solid var(--border);
-      padding: 1.6rem;
-      border-radius: 4px;
-      background: var(--card-bg);
-      transition: border-color 0.2s;
-    }
-
-    .contact-item:hover { border-color: var(--accent); }
-
-    .contact-label {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-    }
-
-    .contact-value {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .contact-value a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .contact-value a:hover { color: var(--accent); }
-
-    .contact-note {
-      margin-top: 3rem;
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--text-dim);
-      border-top: 1px solid var(--border);
-      padding-top: 2rem;
-      text-align: center;
-    }
+    #contact { display:flex; flex-direction:column; justify-content:center; }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1rem; }
+    .contact-item { display:flex; flex-direction:column; gap:0.4rem; border:1px solid var(--border); padding:1.6rem; border-radius:4px; background:var(--card); transition:border-color 0.2s; }
+    .contact-item:hover { border-color:var(--accent); }
+    .contact-label { font-family:var(--mono); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--dim); }
+    .contact-value { font-size:0.95rem; font-weight:600; color:var(--text); }
+    .contact-value a { color:inherit; text-decoration:none; transition:color 0.2s; }
+    .contact-value a:hover { color:var(--accent); }
+    .contact-note { margin-top:3rem; font-size:0.85rem; color:var(--dim); border-top:1px solid var(--border); padding-top:2rem; text-align:center; line-height:1.7; }
+    .contact-note strong { color:var(--text); }
 
     /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--text-dim);
-      border-top: 1px solid var(--border);
-    }
+    footer { text-align:center; padding:2rem; font-family:var(--mono); font-size:0.7rem; color:var(--dim); border-top:1px solid var(--border); }
 
     /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.65s ease,transform 0.65s ease; }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* 语言切换过渡 */
+    .lang-fade { transition: opacity 0.25s ease; }
+    .lang-fade.switching { opacity: 0; }
 
     /* ── SCROLLBAR ── */
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--accent2); border-radius: 2px; }
+    ::-webkit-scrollbar { width:4px; }
+    ::-webkit-scrollbar-track { background:var(--bg); }
+    ::-webkit-scrollbar-thumb { background:var(--accent2); border-radius:2px; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1.2rem; }
-      section { padding: 6rem 1.5rem 4rem; }
-      #about { grid-template-columns: 1fr; gap: 2.5rem; }
-      .skills-grid { grid-template-columns: 1fr; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .project-card.featured { grid-column: 1; }
-      .contact-grid { grid-template-columns: 1fr; }
+    @media (max-width:900px) {
+      nav { padding:1rem 1.5rem; }
+      .nav-links { gap:1rem; }
+      section { padding:6rem 1.5rem 4rem; }
+      #about { grid-template-columns:1fr; gap:2.5rem; }
+      .skills-grid { grid-template-columns:1fr; }
+      .projects-grid { grid-template-columns:1fr; }
+      .project-card.featured { grid-column:1; }
+      .feat-grid { grid-template-columns:1fr; }
+      .contact-grid { grid-template-columns:1fr; }
     }
-
-    @media (max-width: 600px) {
-      .nav-links { display: none; }
-    }
+    @media (max-width:600px) { .nav-links { display:none; } }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <span class="nav-logo">// SHEN ENMIN</span>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
 
-  <!-- ① HOME / HEADLINE -->
-  <section id="home">
-    <p class="hero-eyebrow">// available for opportunities</p>
-    <h1 class="hero-name">
-      Shen<br/>
-      <span>Enmin.</span>
-    </h1>
-    <p class="hero-headline">
-      Seeking a <strong>Data Science / AI Engineer</strong> role — building intelligent systems at the intersection of deep learning, NLP, and scalable software.
-    </p>
-    <div class="hero-tags">
-      <span class="tag tag-blue">AI / Deep Learning</span>
-      <span class="tag tag-purple">NLP · Multimodal</span>
-      <span class="tag tag-blue">Python · PyTorch</span>
-      <span class="tag tag-purple">Vue.js · Frontend</span>
-      <span class="tag tag-red">Open to Work</span>
-    </div>
-  </section>
+<!-- ============================================================
+  🧭 NAVIGATION — 顶部固定导航栏
+  ============================================================
+  .lang-btn → 语言切换按钮（EN ↔ 中文）
+  导航文字由 JS 根据当前语言自动填充
+============================================================ -->
+<nav>
+  <span class="nav-logo" id="nav-logo"></span>
+  <ul class="nav-links" id="nav-links"></ul>          <!-- 导航项注入点 -->
+  <button class="lang-btn" id="lang-btn" onclick="toggleLang()"></button>
+</nav>
 
-  <!-- ② ABOUT ME -->
-  <section id="about">
-    <div class="left fade-in">
-      <p class="section-label">// 02 · About</p>
-      <h2 class="section-title">About<br/>Me.</h2>
 
-      <p class="about-bio">
-        I'm a <strong>software engineer turned AI researcher</strong> currently pursuing an MSc in Data Science at Lingnan University, Hong Kong. My background spans full-stack frontend development and cutting-edge deep learning research — I thrive where engineering rigour meets research creativity.
-      </p>
-      <p class="about-bio">
-        During my internship at the <strong>Shenzhen Research Institute of Big Data</strong>, I designed a production-ready CNN+Transformer auscultation annotation system from scratch. I'm passionate about building AI systems that are not only accurate but <strong>lightweight and deployable</strong> on real hardware.
-      </p>
+<!-- ============================================================
+  ① HOME — 首页 / 定位语句
+  ✏️  改：CONFIG.en.heroTags / CONFIG.zh.heroTags
+============================================================ -->
+<section id="home">
+  <p class="hero-eyebrow" id="hero-eyebrow"></p>
+  <h1 class="hero-name"    id="hero-name"></h1>
+  <p  class="hero-headline" id="hero-headline"></p>
+  <div class="hero-tags"   id="hero-tags"></div>
+</section>
 
-      <ul class="strengths-list fade-in">
-        <li>End-to-end ML: from data preprocessing to FastAPI/Gradio deployment</li>
-        <li>Multimodal learning: text + vision fusion (LoRA, BERT, ViT)</li>
-        <li>Frontend engineering with Vue.js for AI-facing interfaces</li>
-        <li>Research mindset with production-grade engineering habits</li>
-      </ul>
-    </div>
 
-    <div class="right fade-in">
-      <p class="section-label">// Education</p>
+<!-- ============================================================
+  ② ABOUT ME — 关于我
+  ✏️  改：CONFIG.[en|zh].aboutBio / strengths / education / languages
+============================================================ -->
+<section id="about">
+  <!-- 左列：介绍 + 优势 -->
+  <div class="fade-in">
+    <p class="section-label" id="about-label"></p>
+    <h2 class="section-title" id="about-title"></h2>
+    <div id="about-bio"></div>
+    <ul class="strengths-list" id="about-strengths"></ul>
+  </div>
+  <!-- 右列：教育 + 语言 -->
+  <div class="fade-in">
+    <p class="section-label" id="edu-label"></p>
+    <div id="about-education"></div>
+    <br/>
+    <p class="section-label" id="lang-label"></p>
+    <div class="edu-card" id="about-languages"></div>
+  </div>
+</section>
 
-      <div class="edu-card">
-        <div class="edu-school">Lingnan University, Hong Kong</div>
-        <div class="edu-degree">MSc Data Science</div>
-        <div class="edu-period">Sep 2025 – Aug 2026 (Expected)</div>
-      </div>
 
-      <div class="edu-card">
-        <div class="edu-school">Beijing Normal University, Zhuhai</div>
-        <div class="edu-degree">BEng Software Engineering</div>
-        <div class="edu-period">Sep 2018 – Jul 2022</div>
-      </div>
+<!-- ============================================================
+  ③ SKILLS — 技能展示
+  ✏️  改：CONFIG.[en|zh].skillCategories
+============================================================ -->
+<section id="skills">
+  <p class="section-label" id="skills-label"></p>
+  <h2 class="section-title fade-in" id="skills-title"></h2>
+  <div class="skills-grid" id="skills-grid"></div>
+</section>
 
-      <br/>
-      <p class="section-label">// Language</p>
-      <div class="edu-card">
-        <div class="edu-degree">Mandarin — Native</div>
-        <div class="edu-degree" style="margin-top:0.3rem;">English — IELTS 6.5 · CET-6</div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ③ SKILLS -->
-  <section id="skills">
-    <p class="section-label">// 03 · Skills</p>
-    <h2 class="section-title fade-in">Technical<br/>Arsenal.</h2>
+<!-- ============================================================
+  ④ PROJECTS — 项目展示（作业核心 8/20 分）
+  ✏️  改：CONFIG.[en|zh].projects（增减项目 / 编辑字段）
+============================================================ -->
+<section id="projects">
+  <p class="section-label" id="projects-label"></p>
+  <h2 class="section-title fade-in" id="projects-title"></h2>
+  <div class="projects-grid" id="projects-grid"></div>
+</section>
 
-    <div class="skills-grid">
-      <div class="skill-category fade-in">
-        <div class="skill-category-label">AI / Machine Learning</div>
-        <div class="skill-item"><span>PyTorch</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>HuggingFace Transformers</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>LoRA / PEFT</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>BERT · ModernBERT · SigLIP</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>CNN · LSTM · DQN</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>Contrastive Learning</span><span class="skill-dot"></span></div>
-      </div>
 
-      <div class="skill-category fade-in">
-        <div class="skill-category-label">Programming &amp; Tools</div>
-        <div class="skill-item"><span>Python</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>JavaScript / C++ / C#</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>Git / GitLab / GitHub</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>FastAPI · Gradio</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>TensorBoard</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>Tableau</span><span class="skill-dot"></span></div>
-      </div>
+<!-- ============================================================
+  ⑤ RESUME — 工作 & 实习经历
+  ✏️  改：CONFIG.[en|zh].experiences + CONFIG.cvLink
+============================================================ -->
+<section id="resume">
+  <p class="section-label" id="resume-label"></p>
+  <h2 class="section-title fade-in" id="resume-title"></h2>
+  <div id="resume-blocks"></div>
+  <a class="cv-btn" id="cv-btn" href="#" target="_blank"></a>
+  <p style="font-family:var(--mono);font-size:0.7rem;color:var(--dim);margin-top:0.6rem;" id="cv-hint"></p>
+</section>
 
-      <div class="skill-category fade-in">
-        <div class="skill-category-label">Frontend Development</div>
-        <div class="skill-item"><span>Vue.js / uni-app</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>Axios · ElementUI</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>CSS Flexbox / Grid</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>Webpack</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>Unity3D (C#)</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>Cross-platform compatibility</span><span class="skill-dot"></span></div>
-      </div>
 
-      <div class="skill-category fade-in">
-        <div class="skill-category-label">Business / Research</div>
-        <div class="skill-item"><span>Problem framing &amp; scoping</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>Metrics design &amp; evaluation</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>Research reporting</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>Agile / Scrum collaboration</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>API integration &amp; system design</span><span class="skill-dot"></span></div>
-      </div>
+<!-- ============================================================
+  ⑥ CONTACT — 联系方式
+  ✏️  改：CONFIG.email / phone / github / linkedin / [en|zh].contactLabels
+============================================================ -->
+<section id="contact">
+  <p class="section-label" id="contact-label"></p>
+  <h2 class="section-title fade-in" id="contact-title"></h2>
+  <div class="contact-grid" id="contact-grid"></div>
+  <p class="contact-note" id="contact-note"></p>
+</section>
 
-      <div class="skill-category fade-in">
-        <div class="skill-category-label">NLP / Signal</div>
-        <div class="skill-item"><span>Text classification / NER</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>Multimodal fusion</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>STFT / MFCC</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>Audio transcoding / denoising</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>Sentiment / sarcasm detection</span><span class="skill-dot"></span></div>
-      </div>
 
-      <div class="skill-category fade-in">
-        <div class="skill-category-label">Deployment / MLOps</div>
-        <div class="skill-item"><span>FastAPI REST service</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>Gradio demo interface</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>Low-resource GPU optimisation</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>Model eval pipelines</span><span class="skill-dot"></span></div>
-        <div class="skill-item"><span>Reproducible benchmarking</span><span class="skill-dot"></span></div>
-      </div>
-    </div>
-  </section>
+<footer id="footer-text"></footer>
 
-  <!-- ④ PROJECTS -->
-  <section id="projects">
-    <p class="section-label">// 04 · Projects</p>
-    <h2 class="section-title fade-in">Portfolio.</h2>
 
-    <div class="projects-grid">
+<!-- ============================================================
+  🔧 RENDER ENGINE — 双语渲染引擎
+  ============================================================
+  - currentLang: 当前语言，'en' 或 'zh'
+  - toggleLang(): 切换语言
+  - render(lang): 读取 CONFIG[lang]，重建所有 DOM
+  ⚠️  以下代码一般不需要修改
+============================================================ -->
+<script>
+let currentLang = 'en';
 
-      <!-- Featured project -->
-      <div class="project-card featured fade-in">
-        <div class="project-type">Individual Research · Featured</div>
-        <div class="project-title">HateFusion-Light — Multimodal Hate Speech Detection</div>
-        <div class="project-period">2024 – 2025</div>
+// ── 小工具 ────────────────────────────────────────────────────
+const $ = id => document.getElementById(id);
+const make = (tag, cls, html) => {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (html !== undefined) e.innerHTML = html;
+  return e;
+};
+const clear = id => { const el = $(id); while(el.firstChild) el.removeChild(el.firstChild); };
 
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+// ── 语言切换 ─────────────────────────────────────────────────
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'zh' : 'en';
+  // 淡出 → 重渲染 → 淡入
+  document.body.classList.add('lang-fade','switching');
+  setTimeout(() => {
+    render(currentLang);
+    document.documentElement.lang = CONFIG[currentLang].htmlLang;
+    document.body.classList.remove('switching');
+  }, 250);
+}
+
+// ── 主渲染函数 ───────────────────────────────────────────────
+function render(lang) {
+  const L = CONFIG[lang];   // 当前语言数据
+  const G = CONFIG;         // 语言无关数据
+
+  // NAV
+  $('nav-logo').textContent = '// ' + L.nameShort;
+  clear('nav-links');
+  const navAnchors = ['home','about','skills','projects','resume','contact'];
+  L.nav.forEach((text, i) => {
+    const li = make('li');
+    const a  = make('a', null, text);
+    a.href = '#' + navAnchors[i];
+    li.appendChild(a);
+    $('nav-links').appendChild(li);
+  });
+  $('lang-btn').textContent = lang === 'en' ? '中文' : 'EN';
+
+  // ── ① Hero ─────────────────────────────────────────────────
+  $('hero-eyebrow').textContent = L.heroEyebrow;
+  const [first, ...rest] = L.name.split(/\s+/);
+  $('hero-name').innerHTML = lang === 'en'
+    ? `${first}<br/><span>${rest.join(' ')}.</span>`
+    : `<span>${L.name}</span>`;
+  $('hero-headline').innerHTML = L.heroHeadline;
+  clear('hero-tags');
+  L.heroTags.forEach(t => {
+    $('hero-tags').appendChild(make('span', `tag tag-${t.color}`, t.text));
+  });
+
+  // ── ② About ────────────────────────────────────────────────
+  $('about-label').textContent = L.aboutLabel;
+  $('about-title').innerHTML   = L.aboutTitle;
+  clear('about-bio');
+  L.aboutBio.forEach(p => $('about-bio').appendChild(make('p','about-bio',p)));
+  clear('about-strengths');
+  L.strengths.forEach(s => $('about-strengths').appendChild(make('li',null,s)));
+  $('edu-label').textContent  = L.eduLabel;
+  $('lang-label').textContent = L.langLabel;
+  clear('about-education');
+  L.education.forEach(edu => {
+    $('about-education').appendChild(make('div','edu-card',
+      `<div class="edu-school">${edu.school}</div>
+       <div class="edu-degree">${edu.degree}</div>
+       <div class="edu-period">${edu.period}</div>`));
+  });
+  $('about-languages').innerHTML =
+    L.languages.map(l => `<div class="edu-degree">${l}</div>`).join('<br/>');
+
+  // ── ③ Skills ───────────────────────────────────────────────
+  $('skills-label').textContent  = L.skillsLabel;
+  $('skills-title').innerHTML    = L.skillsTitle;
+  clear('skills-grid');
+  L.skillCategories.forEach(cat => {
+    $('skills-grid').appendChild(make('div','skill-category fade-in',
+      `<div class="skill-cat-label">${cat.label}</div>` +
+      cat.items.map(i =>
+        `<div class="skill-item"><span>${i}</span><span class="skill-dot"></span></div>`
+      ).join('')));
+  });
+
+  // ── ④ Projects ─────────────────────────────────────────────
+  $('projects-label').textContent = L.projectsLabel;
+  $('projects-title').innerHTML   = L.projectsTitle;
+  clear('projects-grid');
+  L.projects.forEach(p => {
+    const card = make('div', `project-card fade-in${p.featured ? ' featured' : ''}`);
+    const fl   = L.projectFieldLabels;
+
+    const secHTML = [
+      ['problem',      fl.problem],
+      ['data',         fl.data],
+      ['approach',     fl.approach],
+      ['outcome',      fl.outcome],
+      ['contribution', fl.contribution],
+    ].filter(([k]) => p[k])
+     .map(([k, label]) =>
+       `<div class="project-section">
+          <div class="proj-sec-title">${label}</div>
+          <p>${p[k]}</p>
+        </div>`).join('');
+
+    const techHTML = p.tech.map(t => `<span class="tech-pill">${t}</span>`).join('');
+    const linkHTML = p.link ? `<a class="proj-link" href="${p.link}" target="_blank">↗ GitHub</a>` : '';
+    const inner    = p.featured ? `<div class="feat-grid">${secHTML}</div>` : secHTML;
+
+    card.innerHTML = `
+      <div class="project-type">${p.type}</div>
+      <div class="project-title">${p.title}</div>
+      <div class="project-period">${p.period}</div>
+      ${inner}
+      <div class="project-tech-row">${techHTML}${linkHTML}</div>`;
+    $('projects-grid').appendChild(card);
+  });
+
+  // ── ⑤ Resume ───────────────────────────────────────────────
+  $('resume-label').textContent = L.resumeLabel;
+  $('resume-title').innerHTML   = L.resumeTitle;
+  clear('resume-blocks');
+  const groups = {};
+  L.experiences.forEach(exp => (groups[exp.section] = groups[exp.section] || []).push(exp));
+  Object.entries(groups).forEach(([name, exps]) => {
+    $('resume-blocks').appendChild(make('div','resume-block fade-in',
+      `<div class="resume-block-hdr">${name}</div>` +
+      exps.map(exp => `
+        <div class="resume-entry">
           <div>
-            <div class="project-section">
-              <div class="project-section-title">Problem</div>
-              <p>Detecting hate speech in memes requires understanding both image and text together — neither modality alone is sufficient. Existing solutions are either too large for edge deployment or ignore multimodal context entirely.</p>
-            </div>
-            <div class="project-section">
-              <div class="project-section-title">Data</div>
-              <p>Facebook Hateful Memes dataset: 10,000+ image–text pairs labelled for hate speech, covering sarcasm, derogatory stereotypes, and implicit bias.</p>
-            </div>
+            <div class="resume-role">${exp.role}</div>
+            <div class="resume-org">${exp.org}</div>
+            <ul class="resume-buls">${exp.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>
           </div>
-          <div>
-            <div class="project-section">
-              <div class="project-section-title">Approach</div>
-              <p>Fused ModernBERT + HateBERT (text) and SigLIP-2 ViT-B/16 (image) via a four-stage pipeline: modality quality assessment → bidirectional cross-modal attention → gated dynamic fusion with anti-collapse regularisation → supervised contrastive learning. Only 1.5M trainable parameters via LoRA. Applied Adaptive Focal Loss with multi-task learning (sentiment + sarcasm).</p>
-            </div>
-            <div class="project-section">
-              <div class="project-section-title">Outcome / Impact</div>
-              <p>Expected AUROC 87–89% and F1 83–85% on a consumer-grade GPU (6–8 GB VRAM). Delivered end-to-end pipeline with Gradio demo and production-ready FastAPI service — deployable without data-centre hardware.</p>
-            </div>
-          </div>
-        </div>
+          <div class="resume-period">${exp.period}</div>
+        </div>`).join('')));
+  });
+  $('cv-btn').href        = G.cvLink;
+  $('cv-btn').textContent = L.cvBtnText;
+  $('cv-hint').innerHTML  = L.cvHint;
 
-        <div class="project-tech-row">
-          <span class="tech-pill">Python</span>
-          <span class="tech-pill">PyTorch</span>
-          <span class="tech-pill">HuggingFace</span>
-          <span class="tech-pill">LoRA</span>
-          <span class="tech-pill">ModernBERT</span>
-          <span class="tech-pill">SigLIP-2</span>
-          <span class="tech-pill">FastAPI</span>
-          <span class="tech-pill">Gradio</span>
-          <a href="https://github.com/ShenShermy" target="_blank" style="color:var(--accent);font-family:var(--mono);font-size:0.72rem;margin-left:auto;align-self:center;text-decoration:none;">↗ GitHub</a>
-        </div>
-      </div>
+  // ── ⑥ Contact ──────────────────────────────────────────────
+  $('contact-label').textContent = L.contactLabel;
+  $('contact-title').innerHTML   = L.contactTitle;
+  clear('contact-grid');
+  const cl = L.contactLabels;
+  const cards = [
+    { label: cl.email,   val: `<a href="mailto:${G.email}">${G.email}</a>` },
+    { label: cl.phone,   val: G.phone },
+    { label: cl.github,  val: `<a href="${G.github}" target="_blank">${G.github.replace('https://','')}</a>` },
+    G.linkedin
+      ? { label: cl.linkedin, val: `<a href="${G.linkedin}" target="_blank">View Profile</a>` }
+      : { label: cl.location, val: L.location },
+  ];
+  cards.forEach(c => {
+    $('contact-grid').appendChild(make('div','contact-item',
+      `<span class="contact-label">${c.label}</span>
+       <span class="contact-value">${c.val}</span>`));
+  });
+  $('contact-note').innerHTML = L.contactNote;
 
-      <!-- Project 2 -->
-      <div class="project-card fade-in">
-        <div class="project-type">Individual Project</div>
-        <div class="project-title">Fake News Detection — Multi-Model NLP Comparison</div>
-        <div class="project-period">2024</div>
+  // Footer
+  $('footer-text').textContent =
+    `© ${new Date().getFullYear()} ${L.name} · Built with HTML/CSS/JS · Hosted on GitHub Pages`;
 
-        <div class="project-section">
-          <div class="project-section-title">Problem</div>
-          <p>Misinformation spreads rapidly online. The challenge was to identify which NLP architecture most reliably classifies news articles as real or fake.</p>
-        </div>
-        <div class="project-section">
-          <div class="project-section-title">Data</div>
-          <p>Public fake-news corpus with thousands of labelled news articles; text preprocessed with tokenisation and contextual embeddings.</p>
-        </div>
-        <div class="project-section">
-          <div class="project-section-title">Approach &amp; Outcome</div>
-          <p>Implemented and compared BiLSTM, fine-tuned BERT, and a hybrid BERT-BiLSTM. Built an automated evaluation pipeline generating five comparative visualisations that auto-highlight the best-performing model per metric.</p>
-        </div>
+  // 重新注册 fade-in 观察器
+  setTimeout(() => {
+    document.querySelectorAll('.fade-in:not(.visible)').forEach(el => observer.observe(el));
+  }, 50);
+}
 
-        <div class="project-tech-row">
-          <span class="tech-pill">Python</span>
-          <span class="tech-pill">PyTorch</span>
-          <span class="tech-pill">BERT</span>
-          <span class="tech-pill">BiLSTM</span>
-        </div>
-      </div>
+// ── IntersectionObserver（滚动淡入） ─────────────────────────
+const observer = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+  { threshold: 0.08 }
+);
 
-      <!-- Project 3 -->
-      <div class="project-card fade-in">
-        <div class="project-type">Individual Project</div>
-        <div class="project-title">Deep Q-Learning Snake Game AI</div>
-        <div class="project-period">2024</div>
+// ── 导航高亮 ─────────────────────────────────────────────────
+window.addEventListener('scroll', () => {
+  let cur = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (window.scrollY >= s.offsetTop - 200) cur = s.id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--accent)' : '';
+  });
+});
 
-        <div class="project-section">
-          <div class="project-section-title">Problem</div>
-          <p>Train an agent to play Snake via reinforcement learning — demonstrating curriculum learning for stable convergence in a sparse-reward environment.</p>
-        </div>
-        <div class="project-section">
-          <div class="project-section-title">Approach &amp; Outcome</div>
-          <p>DQN agent with experience replay and target network. Applied a five-stage curriculum learning strategy and layer normalisation to achieve stable convergence. Delivered evaluation and live-demo scripts for reproducible benchmarking and real-time showcase.</p>
-        </div>
+// ── 初始渲染 ─────────────────────────────────────────────────
+render('en');
+</script>
 
-        <div class="project-tech-row">
-          <span class="tech-pill">Python</span>
-          <span class="tech-pill">DQN</span>
-          <span class="tech-pill">Pygame</span>
-          <span class="tech-pill">Curriculum Learning</span>
-        </div>
-      </div>
-
-      <!-- Project 4 (group) -->
-      <div class="project-card fade-in">
-        <div class="project-type">Team Project (Frontend Lead)</div>
-        <div class="project-title">Rainbow Assessment — Teacher Platform</div>
-        <div class="project-period">Mar 2021 – Jun 2022</div>
-
-        <div class="project-section">
-          <div class="project-section-title">Problem</div>
-          <p>Teachers needed a unified web platform to manage grades, clubs, classes and subjects — replacing fragmented spreadsheet workflows.</p>
-        </div>
-        <div class="project-section">
-          <div class="project-section-title">My Contribution</div>
-          <p>Led front-end development of six core pages (Home, Grade Entry, Club / Class / Subject Management) using Vue-CLI. Integrated Axios for real-time API rendering; ensured cross-browser compatibility; collaborated via GitLab in an agile team.</p>
-        </div>
-
-        <div class="project-tech-row">
-          <span class="tech-pill">Vue.js</span>
-          <span class="tech-pill">Axios</span>
-          <span class="tech-pill">CSS Flexbox</span>
-          <span class="tech-pill">GitLab</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ⑤ RESUME -->
-  <section id="resume">
-    <p class="section-label">// 05 · Resume</p>
-    <h2 class="section-title fade-in">Experience.</h2>
-
-    <div class="resume-block fade-in">
-      <div class="resume-block-header">Internship</div>
-      <div class="resume-entry">
-        <div>
-          <div class="resume-role">AI Reinforcement Learning Research Assistant</div>
-          <div class="resume-org">Shenzhen Research Institute of Big Data</div>
-          <ul class="resume-bullets">
-            <li>Completed Stanford CS230 (Deep Learning) and CS224N (NLP), studying neural networks, GANs, transformers, GloVe, RNN and LSTM architectures.</li>
-            <li>Designed and built an AI auscultation annotation system using a CNN+Transformer pipeline with audio transcoding and noise reduction tools.</li>
-            <li>Optimised architecture with dropout regularisation, Adam optimiser and AverageMeter; used TensorBoard for visualisation, improving model accuracy and annotation efficiency.</li>
-          </ul>
-        </div>
-        <div class="resume-period">Jul – Aug 2024</div>
-      </div>
-    </div>
-
-    <div class="resume-block fade-in">
-      <div class="resume-block-header">Work Experience</div>
-      <div class="resume-entry">
-        <div>
-          <div class="resume-role">Front-End Developer — Technical Development Dept.</div>
-          <div class="resume-org">Galaxy Communications Ltd., Shenzhen</div>
-          <ul class="resume-bullets">
-            <li>Designed and developed front-end interfaces with uni-app, Vue.js and CSS Flexbox for cross-platform (mobile + desktop) deployment.</li>
-            <li>Built waterfall-layout and hot-search tag components with real-time backend API integration via Axios.</li>
-            <li>Maintained version control and code reviews via GitLab within an agile team.</li>
-          </ul>
-        </div>
-        <div class="resume-period">Aug 2022 – Sep 2023</div>
-      </div>
-    </div>
-
-    <!-- Download button — replace href with your actual CV link -->
-    <a class="cv-download-btn" href="https://github.com/ShenShermy" target="_blank">
-      ↓ &nbsp; Download Full CV (PDF)
-    </a>
-    <p style="font-family:var(--mono);font-size:0.7rem;color:var(--text-dim);margin-top:0.6rem;">
-      * Replace the link above with your Google Drive / GitHub raw PDF link after upload.
-    </p>
-  </section>
-
-  <!-- ⑥ CONTACT -->
-  <section id="contact">
-    <p class="section-label">// 06 · Contact</p>
-    <h2 class="section-title fade-in">Get In<br/>Touch.</h2>
-
-    <div class="contact-grid fade-in">
-      <div class="contact-item">
-        <span class="contact-label">Email</span>
-        <span class="contact-value"><a href="mailto:shenenmin5s6d@163.com">shenenmin5s6d@163.com</a></span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-label">Phone</span>
-        <span class="contact-value">+86 137 1481 8884</span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-label">GitHub</span>
-        <span class="contact-value"><a href="https://github.com/ShenShermy" target="_blank">github.com/ShenShermy</a></span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-label">Location</span>
-        <span class="contact-value">Shenzhen, China · Hong Kong</span>
-      </div>
-    </div>
-
-    <p class="contact-note">
-      I'm actively seeking Data Science / AI Engineer roles. Feel free to reach out — response within 24 hours.
-    </p>
-  </section>
-
-  <footer>
-    © 2025 Shen Enmin · Built with HTML/CSS/JS · Hosted on GitHub Pages
-  </footer>
-
-  <script>
-    // Scroll-triggered fade-in
-    const observer = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-      { threshold: 0.1 }
-    );
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Active nav link highlighting
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 200) current = s.id; });
-      navLinks.forEach(a => {
-        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
-      });
-    });
-  </script>
 </body>
 </html>
